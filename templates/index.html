@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width,initial-scale=1.">
+        <title>Model Prediction</title>
+        <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+
+    </head>
+    <body>
+        <div class="header">
+            <img src="{{url_for('static',filename='images/new.jpg')}}">
+            <div class="side-nav">
+                <div class="home-menu">
+                    <h2>Option Menu</h2>
+                </div>
+                <ul>
+                    <li><img src="{{url_for('static',filename='images/home.png')}}"><a href="#">Home</a></li>
+                    <li><img src="{{url_for('static',filename='images/analyse.png')}}"><a href="/predict">Selling price Prediction </a></li>
+                    <li><img src="{{url_for('static',filename='images/analyse.png')}}"><a href="/classify">Status</a></li>
+                </ul>
+            </div>
+        </div>
+    </body>
+</html>
+
