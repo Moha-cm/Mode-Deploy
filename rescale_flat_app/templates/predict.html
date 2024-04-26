@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+    <meta charset="UTF-8">
+    <title>ML model</title>   
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+</head>
+<body background="{{ url_for('static', filename='images/istock.jpg') }}"> 
+
+     
+    <center>
+        <h1>Rescale Flat  Price Prediction </h1>
+    </center>
+    
+    <div class="container">
+        <center>
+        <h2>Enter the Input values </Input></h2>
+    </center>
+        
+        <form action="/predict"    method="POST">
+    
+            <div class="input-wrapper">
+                <label 
+                for="Flat_type"
+                class="custom_Flat_type"
+                >
+                Flat type
+                <select name = "Flat_type">
+                    <option value="" disabled selected>Choose Flat type</option>
+                    <option value="0">2 room</option>
+                    <option value="1">3 room</option>
+                    <option value="2">4 room</option>
+                    <option value="3">5 room</option>
+                    <option value="4">executive</option>
+                    <option value="5">multi-generation</option>
+                </select>
+    
+            </label>
+            </div>
+    
+            
+            
+    
+            <div class="input-wrapper">
+                <label 
+                for="Floor_Area"
+                class="custom_Floor_Area"
+                >
+                Floor Area sqm
+                <select id="Floor_Area" name ="Floor_Area">
+                <option value="" disabled selected>Select Floor Area</option>
+                </select>
+            </label>
+            </div>
+    
+           
+            <div class="input-wrapper">
+                <label 
+                for="Flat_Model"
+                class="custom_Flat_Model"
+                >
+                Flat Model
+                <select name = "Flat_Model">
+                    <option value="" disabled selected>Select Flat Model</option>
+                    <option value="0">2-ROOM</option>
+                    <option value="1">3GEN</option>
+                    <option value="2">ADJOINED FLAT</option>
+                    <option value="3">APARTMENT</option>
+                    <option value="4">DBSS</option>
+                    <option value="5">IMPROVED</option>
+                    <option value="6">IMPROVED-MAISONETTE</option>
+                    <option value="7">MAISONETTE</option>
+                    <option value="8">MODEL A</option>
+                    <option value="9">MODEL A-MAISONETTE</option>
+                    <option value="10">MODEL A2</option>
+                    <option value="11">MULTI GENERATION</option>
+                    <option value="12">NEW GENERATION</option>
+                    <option value="13">PREMIUM APARTMENT</option>
+                    <option value="14">PREMIUM APARTMENT LOFT</option>
+                    <option value="15">PREMIUM MAISONETTE</option>
+                    <option value="16">SIMPLIFIED</option>
+                    <option value="17">STANDARD</option>
+                    <option value="18">TERRACE</option>
+                    <option value="19">TYPE S1</option>
+                    <option value="20">TYPE S2</option>
+                /<select>
+            </label>
+                
+            </div>
+    
+            <div class="input-wrapper">
+                <label 
+                for="Lease_Year"
+                class="custom_Lease_Year"
+                >
+                Lease Year 
+                <select name = "Lease_Year">
+                    <option value="" disabled selected>Choose Lease_Year</option>
+                    <option value="0">1966</option>
+                    <option value="1">1967</option>
+                    <option value="2">1968</option>
+                    <option value="3">1969</option>
+                    <option value="4">1970</option>
+                    <option value="5">1971</option>
+                    <option value="6">1972</option>
+                    <option value="7">1973</option>
+                    <option value="8">1974</option>
+                    <option value="9">1975</option>
+                    <option value="10">1976</option>
+                    <option value="11">1977</option>
+                    <option value="12">1978</option>
+                    <option value="13">1979</option>
+                    <option value="14">1980</option>
+                    <option value="15">1981</option>
+                    <option value="16">1982</option>
+                    <option value="17">1983</option>
+                    <option value="18">1984</option>
+                    <option value="19">1985</option>
+                    <option value="20">1986</option>
+                    <option value="21">1987</option>
+                    <option value="22">1988</option>
+                    <option value="23">1989</option>
+                    <option value="24">1990</option>
+                    <option value="25">1991</option>
+                    <option value="26">1992</option>
+                    <option value="27">1993</option>
+                    <option value="28">1994</option>
+                    <option value="29">1995</option>
+                    <option value="30">1996</option>
+                    <option value="31">1997</option>
+                    <option value="32">1998</option>
+                    <option value="33">1999</option>
+                    <option value="34">2000</option>
+                    <option value="35">2001</option>
+                    <option value="36">2002</option>
+                    <option value="37">2003</option>
+                    <option value="38">2004</option>
+                    <option value="39">2005</option>
+                    <option value="40">2006</option>
+                    <option value="41">2007</option>
+                    <option value="42">2008</option>
+                    <option value="43">2009</option>
+                    <option value="44">2010</option>
+                    <option value="45">2011</option>
+                    <option value="46">2012</option>
+                    <option value="47">2013</option>
+                    <option value="48">2014</option>
+                    <option value="49">2015</option>
+                    <option value="50">2016</option>
+                    <option value="51">2017</option>
+                    <option value="52">2018</option>
+                    <option value="53">2019</option>
+                    <option value="54">2020</option>
+                    <option value="55">2022</option>
+                /<select>
+            </label>
+            </div>
+    
+    
+            <div class="input-wrapper">
+                <label 
+                for="Year"
+                class="custom-Year"
+                >
+                Year
+                <select name = "Year">
+                    <option value="" disabled selected>Choose Year</option>
+                    <option value="0">2015</option>
+                    <option value="1">2016</option>
+                    <option value="2">2017</option>
+                    <option value="3">2018</option>
+                    <option value="4">2019</option>
+                    <option value="5">2020</option>
+                    <option value="6">2021</option>
+                    <option value="7">2022</option>
+                    <option value="8">2023</option>
+                /<select>
+            </label>
+
+
+
+            <div class="input-wrapper">
+                <label 
+                for="Min_Storey"
+                class="custom-Min_Storey"
+                >
+                Min Storey Range
+                <select name = "Min_Storey">
+                    <option value="" disabled selected>Choose Min_Storey</option>
+                    <option value="0">01</option>
+                    <option value="1">04</option>
+                    <option value="2">07</option>
+                    <option value="3">10</option>
+                    <option value="4">13</option>
+                    <option value="5">16</option>
+                    <option value="6">19</option>
+                    <option value="7">22</option>
+                    <option value="8">25</option>
+                    <option value="9">28</option>
+                    <option value="10">31</option>
+                    <option value="11">34</option>
+                    <option value="12">37</option>
+                    <option value="13">40</option>
+                    <option value="14">43</option>
+                    <option value="15">46</option>
+                /<select>
+            </label>
+    
+            </div>
+    
+    
+            <div class="input-wrapper">
+                <label 
+                for="Max_Storey"
+                class="custom-Max_Storey"
+                >
+                Max Storey Range
+                <select name = "Max_Storey">
+                    <option value="" disabled selected>Choose Max Storey</option>
+                    <option value="0">03</option>
+                    <option value="1">06</option>
+                    <option value="2">09</option>
+                    <option value="3">12</option>
+                    <option value="4">15</option>
+                    <option value="5">18</option>
+                    <option value="6">21</option>
+                    <option value="7">24</option>
+                    <option value="8">27</option>
+                    <option value="9">30</option>
+                    <option value="10">33</option>
+                    <option value="11">36</option>
+                    <option value="12">39</option>
+                    <option value="13">42</option>
+                    <option value="14">45</option>
+                    <option value="15">48</option>
+                /<select>
+    
+            </label>
+    
+            </div>
+    
+    
+    
+    
+    
+            <label 
+            for="predict"
+            class="form-label"
+            >
+    
+            <div class="input-wrapper">
+    
+            <button id = predict type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+        </div>
+        </form>
+    
+        {{ prediction_text }}
+    
+    </div>
+    
+    <center>
+        <a href="/">Home</a>
+    
+    </center>
+    <script src="{{url_for('static',filename='js/js_script.js')}}"></script>
+    </body>
+    </html>
+    
+
