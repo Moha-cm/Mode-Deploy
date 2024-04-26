@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width,initial-scale=1.">
+        <title>Model Prediction</title>
+        <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+
+    </head>
+    <body>
+        <div class="output">
+            <img src="{{url_for('static',filename='images/new.jpg')}}">
+            
+
+            <div class="output_sub">
+                <h1>{{ page_name }}</h1>
+            </div>
+            <div class="output_table">
+           
+                <table>
+                {% for key,value in result.items() %}
+                <tr>
+                    <th>{{ key }}</th><br>
+                    <th>{{ value }}</th>
+                </tr>
+                {% endfor %}
+            </table>
+            
+        <h2>{{ prediction_text }}</h2>
+            
+        </div>
+        </div>
+      
+    </body>
+</html>
+

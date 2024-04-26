@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+    <meta charset="UTF-8">
+    <title>ML model</title>   
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+</head>
+<body background="{{ url_for('static', filename='images/istock.jpg') }}"> 
+
+    
+    <center>
+    <h1>Copper Status Classification </h1>
+</center>
+
+<div class="container">
+    <center>
+    <h2>Enter the Input values </Input></h2>
+</center>
+    
+    <form  action="/classify"   method="POST">
+        <div class="input-wrapper">
+            <label 
+            for="Customer"
+            class="custom_customer"
+            >
+            Customer
+            <select name = "Customer">
+                <option value="" disabled selected>Choose Customer ID</option>
+                <option value="0">30147722</option>
+                <option value="1">30148135</option>
+                <option value="2">30148586</option>
+                <option value="3">30148629</option>
+                <option value="4">30148806</option>
+                <option value="5">30148849</option>
+                <option value="6">30148907</option>
+                <option value="7">30149080</option>
+                <option value="8">30149089</option>
+                <option value="9">30149105</option>
+                <option value="10">30149129</option>
+                <option value="11">30149530</option>
+                <option value="12">30152417</option>
+                <option value="13">30153509</option>
+                <option value="14">30153510</option>
+                <option value="15">30153767</option>
+                <option value="16">30153956</option>
+                <option value="17">30153963</option>
+                <option value="18">30154020</option>
+                <option value="19">30154025</option>
+                <option value="20">30155835</option>
+                <option value="21">30156308</option>
+                <option value="22">30156496</option>
+                <option value="23">30156795</option>
+                <option value="24">30156842</option>
+                <option value="25">30157033</option>
+                <option value="26">30157111</option>
+                <option value="27">30157776</option>
+                <option value="28">30157862</option>
+                <option value="29">30157952</option>
+                <option value="30">30158107</option>
+                <option value="31">30158133</option>
+                <option value="32">30158293</option>
+                <option value="33">30158305</option>
+                <option value="34">30159894</option>
+                <option value="35">30160001</option>
+                <option value="36">30160005</option>
+                <option value="37">30160016</option>
+                <option value="38">30160375</option>
+                <option value="39">30160378</option>
+                <option value="40">30160683</option>
+                <option value="41">30160788</option>
+                <option value="42">30160907</option>
+                <option value="43">30161088</option>
+                <option value="44">30161189</option>
+                <option value="45">30161289</option>
+                <option value="46">30161350</option>
+                <option value="47">30161540</option>
+                <option value="48">30161856</option>
+                <option value="49">30161943</option>
+                <option value="50">30162074</option>
+                <option value="51">30162145</option>
+                <option value="52">30162161</option>
+                <option value="53">30162329</option>
+                <option value="54">30162405</option>
+                <option value="55">30164100</option>
+                <option value="56">30164209</option>
+                <option value="57">30164235</option>
+                <option value="58">30164464</option>
+                <option value="59">30164472</option>
+                <option value="60">30164630</option>
+                <option value="61">30164673</option>
+                <option value="62">30164695</option>
+                <option value="63">30164696</option>
+                <option value="64">30164721</option>
+                <option value="65">30164964</option>
+                <option value="66">30165029</option>
+                <option value="67">30165508</option>
+                <option value="68">30165529</option>
+                <option value="69">30165703</option>
+                <option value="70">30165751</option>
+                <option value="71">30165984</option>
+                <option value="72">30165992</option>
+                <option value="73">30166288</option>
+                <option value="74">30166304</option>
+                <option value="75">30166502</option>
+                <option value="76">30196870</option>
+                <option value="77">30196884</option>
+                <option value="78">30196886</option>
+                <option value="79">30196997</option>
+                <option value="80">30197000</option>
+                <option value="81">30197144</option>
+                <option value="82">30197193</option>
+                <option value="83">30197204</option>
+                <option value="84">30197225</option>
+                <option value="85">30197265</option>
+                <option value="86">30197399</option>
+                <option value="87">30197445</option>
+                <option value="88">30197464</option>
+                <option value="89">30197482</option>
+                <option value="90">30197505</option>
+                <option value="91">30197514</option>
+                <option value="92">30197636</option>
+                <option value="93">30197785</option>
+                <option value="94">30197978</option>
+                <option value="95">30197989</option>
+                <option value="96">30198267</option>
+                <option value="97">30198328</option>
+                <option value="98">30198408</option>
+                <option value="99">30198423</option>
+                <option value="100">30198485</option>
+                <option value="101">30198577</option>
+                <option value="102">30198586</option>
+                <option value="103">30198657</option>
+                <option value="104">30198676</option>
+                <option value="105">30198682</option>
+                <option value="106">30198761</option>
+                <option value="107">30198776</option>
+                <option value="108">30198779</option>
+                <option value="109">30198826</option>
+                <option value="110">30198841</option>
+                <option value="111">30199048</option>
+                <option value="112">30199168</option>
+                <option value="113">30199169</option>
+                <option value="114">30199179</option>
+                <option value="115">30199269</option>
+                <option value="116">30199273</option>
+                <option value="117">30201096</option>
+                <option value="118">30201113</option>
+                <option value="119">30201336</option>
+                <option value="120">30201369</option>
+                <option value="121">30201370</option>
+                <option value="122">30201386</option>
+                <option value="123">30201478</option>
+                <option value="124">30201540</option>
+                <option value="125">30201547</option>
+                <option value="126">30201589</option>
+                <option value="127">30201735</option>
+                <option value="128">30201748</option>
+                <option value="129">30201752</option>
+                <option value="130">30201846</option>
+                <option value="131">30201860</option>
+                <option value="132">30201911</option>
+                <option value="133">30201912</option>
+                <option value="134">30201914</option>
+                <option value="135">30202102</option>
+            </select>
+        </label>
+        </div>
+
+        <div class="input-wrapper">
+            <label 
+            for="Country"
+            class="custom_country"
+            >
+            Country
+            <select name = "Country">
+                <option value="" disabled selected>Choose a Country</option>
+                <option value="0">India</option>
+                <option value="1">USA</option>
+                <option value="2">Canada</option>
+                <option value="3">Mexico</option>
+                <option value="4">Brazil</option>
+                <option value="5">Germany</option>
+                <option value="6">France</option>
+                <option value="7">Italy</option>
+                <option value="8">China</option>
+                <option value="9">Japan</option>
+                <option value="10">South Korea</option>
+                <option value="11">Australia</option>
+                <option value="12">Russia</option>
+                <option value="13">South Africa</option>
+            </select>
+
+        </label>
+        </div>
+
+        <div class="input-wrapper">
+            <label 
+            for="Item-Type"
+            class="custom_Itemtype"
+            >
+            Item-Type
+            <select name = "Item_Type">
+                <option value="" disabled selected>Choose a Item-Type</option>
+                <option value="0">IPL</option>
+                <option value="1">Others</option>
+                <option value="2">PL</option>
+                <option value="3">S</option>
+                <option value="4">W</option>
+                <option value="5">WI</option>
+            </select>
+
+        </label>
+        </div>
+
+        <div class="input-wrapper">
+            <label 
+            for="Application"
+            class="custom_Application"
+            >
+            Application
+            <select name = "Application" >
+                <option value="" disabled selected>Choose a Application</option>
+                <option value="0">2</option>
+                <option value="1">3</option>
+                <option value="2">4</option>
+                <option value="3">5</option>
+                <option value="4">10</option>
+                <option value="5">15</option>
+                <option value="6">19</option>
+                <option value="7">20</option>
+                <option value="8">22</option>
+                <option value="9">25</option>
+                <option value="10">26</option>
+                <option value="11">27</option>
+                <option value="12">28</option>
+                <option value="13">29</option>
+                <option value="14">38</option>
+                <option value="15">39</option>
+                <option value="16">40</option>
+                <option value="17">41</option>
+                <option value="18">42</option>
+                <option value="19">56</option>
+                <option value="20">59</option>
+                <option value="21">65</option>
+                <option value="22">66</option>
+                <option value="23">67</option>
+                <option value="24">68</option>
+                <option value="25">69</option>
+                <option value="26">70</option>
+                <option value="27">79</option>
+            </select>
+
+            
+        </label>
+        </div>
+
+        <div class="input-wrapper">
+            <label 
+            for="Material"
+            class="custom_Material"
+            >
+            Material
+            <select name = "Material">
+                <option value="" disabled selected>Choose a Material</option>
+                <option value="1053">4.10641=ST 37-2G=S235JR AR</option>
+                <option value="1054">4.10657_1305X5.30_SID</option>
+                <option value="1055">4.10657_1400X5.30_SID</option>
+                <option value="1056">4.10660_1372X3_LIE</option>
+                <option value="1057">4.10679_1180X4.15_SWB</option>
+                <option value="1058">4.10679_1510X4.15_SWB</option>
+                <option value="1059">4.10685_1232X8.00_ATL</option>
+                <option value="1060">4.10686_1610X2.00_BRE</option>
+                <option value="1061">4.10688_1360X3.35_SWB</option>
+                <option value="1062">4.10706_1225X4.00_LIE</option>
+                <option value="1063">4.10706_1515X4_LIE</option>
+                <option value="1064">4.10726_1410X1.45_LIE</option>
+                <option value="1065">4.10726_1410X1.50_BRE</option>
+                <option value="1066">4.10727_1300X3.00_BRE</option>
+                <option value="1067">4.10727_1630X1.75_BRE</option>
+                <option value="1068">4.10762_1180X2.5_SWB</option>
+                <option value="1069">4.10766_1500X1.50_SWB</option>
+                <option value="1070">4.10770_1420X3_BRE</option>
+                <option value="1071">4.10795_1180X3.00_SWB</option>
+                <option value="1072">4.10795_1320X3.00_SWB</option>
+                <option value="1073">4.10801_1390X3_BRE</option>
+                <option value="1074">4.10815_1080X4_LIE</option>
+                <option value="1075">4.10820_1140X5.00_LIE</option>
+                <option value="1076">4.10820_1415X5.00_SWB</option>
+                <option value="1077">4.10821_1180X2.00_LIE</option>
+                <option value="1078">4.10821_1350X2.00_BRE</option>
+                <option value="1079">4.10824_1475X3_SWB</option>
+                <option value="1080">4.10835_1500X2_BRE</option>
+            /<select>
+        </label>
+            
+        </div>
+
+
+        <div class="input-wrapper">
+            <label 
+            for="Item-Year"
+            class="custom-selector1"
+            >
+            Item Year
+            <select name = "Item-Year">
+                <option value="" disabled selected>Choose a Item-Year</option>
+                <option value="0">2020</option>
+                <option value="1">2021</option>
+            /<select>
+        </label>
+
+
+        <label 
+        for="predict"
+        class="form-label"
+        >
+
+        <div class="input-wrapper">
+
+        <button id = predict type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </div>
+    </form>
+
+    {{ prediction_text }}
+    </p>
+</div>
+
+<center>
+    <a href="/">Home</a>
+
+</center>
+</body>
+</html>
