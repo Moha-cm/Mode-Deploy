@@ -1,70 +1,50 @@
 # Project Title: Predictive Models for Resale Prices and Lead Classification
-Overview
-This project aims to develop and deploy two machine learning models:
+## Overview
+### This project aims to develop and deploy two machine learning models:
 
 A regression model for predicting the resale prices of flats in Singapore.
 A classification model for evaluating and classifying leads in the copper industry.
 The project includes creating user-friendly web applications for each model to assist users in making data-driven decisions.
 
-Table of Contents
+## Table of Contents
 Introduction
 Datasets
 Machine Learning Models
 Web Application
 Installation and Setup
-Usage
-Contributing
-License
-Introduction
-Resale Price Prediction
+
+## Introduction
+### Resale Price Prediction
 The objective of the resale price prediction model is to assist potential buyers and sellers in estimating the resale value of flats in Singapore. The model leverages historical data of resale flat transactions and utilizes advanced machine learning techniques to improve prediction accuracy. This includes addressing issues such as data skewness and noise, which can affect manual predictions.
 
-Lead Classification
+### Lead Classification
 In the copper industry, lead management is crucial for business success. The lead classification model aims to evaluate and classify leads based on their likelihood of converting into customers. By analyzing historical sales data, the model identifies patterns and helps prioritize leads, improving the efficiency of the sales process.
 
-Datasets
-Resale Price Prediction Dataset
-The dataset for the resale price prediction model includes historical transaction data of resale flats in Singapore. Key features include:
 
-Transaction Date
-Flat Type
-Flat Model
-Town
-Floor Area
-Lease Commence Date
-Remaining Lease
-Resale Price
-Lead Classification Dataset
-The lead classification model uses sales data from the copper industry. Key features include:
-
-Lead ID
-Lead Source
-Lead Score
-Contact Date
-Sales Stage
-Status (WON/LOST)
-Machine Learning Models
-Resale Price Prediction Model
-The resale price prediction model is built using regression techniques. Key steps include:
-
-Data Preprocessing: Handling missing values, encoding categorical features, and scaling numerical features.
-Feature Engineering: Creating new features such as the age of the flat and interaction terms.
-Model Selection: Experimenting with different regression algorithms (e.g., Linear Regression, Random Forest, XGBoost) and selecting the best-performing model.
-Model Evaluation: Using metrics such as Mean Absolute Error (MAE), Mean Squared Error (MSE), and R-squared to evaluate model performance.
-Lead Classification Model
+## Data Preprocessing: 
+Handling missing values, encoding categorical features, and scaling numerical features.
+## Feature Engineering: 
+Creating new features such as the age of the flat and interaction terms.
+## Model Selection: 
+Experimenting with different regression algorithms (e.g., Linear Regression, Random Forest, XGBoost) and selecting the best-performing model.
+## Model Evaluation: 
+Using metrics such as Mean Absolute Error (MAE), Mean Squared Error (MSE), and R-squared to evaluate model performance.
+## Lead Classification Model
 The lead classification model uses classification techniques to predict the likelihood of a lead converting into a customer. Key steps include:
 
-Data Cleaning: Removing data points with STATUS values other than WON or LOST.
-Feature Selection: Identifying the most relevant features for predicting lead conversion.
-Model Selection: Experimenting with different classification algorithms (e.g., Logistic Regression, Decision Trees, Random Forest) and selecting the best-performing model.
-Model Evaluation: Using metrics such as Accuracy, Precision, Recall, and F1-Score to evaluate model performance.
-Web Application
+## Data Cleaning:
+Removing data points with STATUS values other than WON or LOST.
+## Feature Selection: 
+Identifying the most relevant features for predicting lead conversion.
+## Model Selection:
+Experimenting with different classification algorithms (e.g., Logistic Regression, Decision Trees, Random Forest) and selecting the best-performing model.
+## Model Evaluation: 
+Using metrics such as Accuracy, Precision, Recall, and F1-Score to evaluate model performance.
+## Web Application
 The web application provides a user-friendly interface for interacting with the machine learning models. Key features include:
 
-Input forms for users to enter relevant data.
-Model predictions displayed in a clear and understandable format.
-Visualization of key insights and trends.
-Technologies Used
+
+## Technologies Used
 Frontend: HTML, CSS, JavaScript
-Backend: Flask/Django (Python)
+Backend: Flask,Python
 Machine Learning: scikit-learn, pandas, numpy
